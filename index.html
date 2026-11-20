@@ -1,0 +1,1624 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日看料one - 品牌视频门户|企业级内容社区与创作者生态</title>
+<meta name="description" content="每日看料one官方网站，专注生活方式影像与深度内容的视频品牌平台，汇聚原创创作者与企业精品内容，打造值得信赖的内容生态与社区。">
+<meta name="keywords" content="每日看料one,官方网站,视频品牌,原创内容,创作者社区,内容生态,精品内容">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e2572b'/%3E%3Cpath d='M24 20l20 12-20 12z' fill='%23fff8f2'/%3E%3C/svg%3E">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --mky-amber:#e2572b;
+  --mky-amber-dark:#b9401c;
+  --mky-cream:#fff8f2;
+  --mky-sand:#f4e6d8;
+  --mky-ink:#3a2b22;
+  --mky-ink-soft:#6b574b;
+  --mky-line:#ead9c9;
+  --mky-gold:#c98a2e;
+  --mky-shadow:0 8px 28px rgba(120,70,30,.12);
+  --mky-radius:16px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  background:var(--mky-cream);
+  color:var(--mky-ink);
+  line-height:1.75;
+  font-size:16px;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+.mky-container{width:min(1180px,92%);margin:0 auto}
+.mky-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ============ 公告条 + 页头 吸顶 ============ */
+.mky-sticky-head{position:sticky;top:0;z-index:120}
+.mky-notice-bar{
+  background:linear-gradient(90deg,var(--mky-ink) 0%,#5a3d2b 60%,var(--mky-amber-dark) 100%);
+  color:#ffeede;
+  font-size:13.5px;
+  padding:8px 0;
+}
+.mky-notice-inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.mky-notice-tag{
+  background:var(--mky-amber);color:#fff;border-radius:20px;
+  padding:1px 12px;font-size:12px;letter-spacing:1px;flex-shrink:0;font-weight:600;
+}
+.mky-notice-text{flex:1;min-width:200px;color:#ffe1cb}
+.mky-notice-text b{color:#fff;font-weight:600}
+.mky-notice-links{display:flex;gap:14px;flex-shrink:0}
+.mky-notice-links a{color:#ffd8bd;border-bottom:1px dashed rgba(255,216,189,.5);font-size:12.5px}
+.mky-notice-links a:hover{color:#fff;border-bottom-color:#fff}
+
+.mky-header{
+  background:rgba(255,248,242,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--mky-line);
+}
+.mky-header-inner{
+  display:flex;align-items:center;gap:24px;
+  height:76px;
+}
+.mky-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.mky-logo-mark{
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(135deg,var(--mky-amber),var(--mky-gold));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(226,87,43,.35);
+}
+.mky-logo-mark svg{width:20px;height:20px;fill:#fff8f2}
+.mky-logo-words strong{display:block;font-size:19px;letter-spacing:.5px;line-height:1.15;color:var(--mky-ink)}
+.mky-logo-words span{display:block;font-size:11px;letter-spacing:2px;color:var(--mky-ink-soft)}
+.mky-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+.mky-nav a{
+  font-size:14.5px;padding:7px 13px;border-radius:20px;color:var(--mky-ink-soft);
+  transition:background .2s,color .2s;white-space:nowrap;
+}
+.mky-nav a:hover,.mky-nav a.is-active{background:var(--mky-sand);color:var(--mky-amber-dark);font-weight:600}
+.mky-header-tools{display:flex;align-items:center;gap:10px;margin-left:auto}
+.mky-search{position:relative;display:flex;align-items:center}
+.mky-search input{
+  width:190px;padding:9px 38px 9px 14px;border-radius:22px;font-size:13.5px;
+  border:1px solid var(--mky-line);background:#fff;color:var(--mky-ink);outline:none;
+  transition:border-color .2s,box-shadow .2s,width .25s;
+}
+.mky-search input:focus{border-color:var(--mky-amber);box-shadow:0 0 0 3px rgba(226,87,43,.14);width:220px}
+.mky-search button{
+  position:absolute;right:5px;width:30px;height:30px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:var(--mky-ink-soft);
+}
+.mky-search button:hover{background:var(--mky-sand);color:var(--mky-amber-dark)}
+.mky-search button svg{width:15px;height:15px}
+.mky-search-tip{
+  position:absolute;top:110%;right:0;width:260px;background:#fff;border:1px solid var(--mky-line);
+  border-radius:12px;box-shadow:var(--mky-shadow);padding:10px 14px;font-size:13px;color:var(--mky-ink-soft);
+  display:none;z-index:60;
+}
+.mky-search-tip.is-open{display:block}
+.mky-search-tip b{color:var(--mky-amber-dark)}
+.mky-btn-submit{
+  background:linear-gradient(135deg,var(--mky-amber),var(--mky-gold));
+  color:#fff;border-radius:22px;padding:9px 20px;font-size:14px;font-weight:600;
+  box-shadow:0 4px 14px rgba(226,87,43,.28);transition:transform .18s,box-shadow .2s;white-space:nowrap;
+}
+.mky-btn-submit:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(226,87,43,.36)}
+.mky-burger{
+  display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--mky-line);
+  align-items:center;justify-content:center;background:#fff;
+}
+.mky-burger span{display:block;width:18px;height:2px;background:var(--mky-ink);position:relative}
+.mky-burger span::before,.mky-burger span::after{
+  content:"";position:absolute;left:0;width:18px;height:2px;background:var(--mky-ink);
+}
+.mky-burger span::before{top:-6px}
+.mky-burger span::after{top:6px}
+
+/* ============ 首屏 Hero ============ */
+.mky-hero{padding:56px 0 40px;position:relative;overflow:hidden}
+.mky-hero::before{
+  content:"";position:absolute;right:-140px;top:-80px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(226,87,43,.16),transparent 68%);
+}
+.mky-hero::after{
+  content:"";position:absolute;left:-120px;bottom:-160px;width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,138,46,.14),transparent 66%);
+}
+.mky-hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative;z-index:2;
+}
+.mky-hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1px;
+  background:#fff;border:1px solid var(--mky-line);border-radius:20px;padding:5px 16px 5px 8px;color:var(--mky-amber-dark);
+  box-shadow:var(--mky-shadow);font-weight:600;
+}
+.mky-hero-kicker i{
+  width:20px;height:20px;border-radius:50%;background:var(--mky-amber);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-style:normal;font-size:10px;
+}
+.mky-hero h1{
+  font-size:clamp(38px,5vw,58px);line-height:1.14;letter-spacing:1px;
+  margin:20px 0 14px;color:var(--mky-ink);font-weight:800;
+}
+.mky-hero h1 em{
+  font-style:normal;color:var(--mky-amber);
+  background:linear-gradient(180deg,transparent 62%,rgba(226,87,43,.18) 62%);
+}
+.mky-hero-lead{font-size:17px;color:var(--mky-ink-soft);max-width:540px;margin-bottom:14px}
+.mky-hero-desc{font-size:14.6px;color:var(--mky-ink-soft);max-width:560px;margin-bottom:24px}
+.mky-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.mky-btn-primary{
+  background:var(--mky-ink);color:#fff8f2;padding:12px 26px;border-radius:26px;font-size:15px;font-weight:600;
+  transition:transform .18s,background .2s;display:inline-flex;align-items:center;gap:8px;
+}
+.mky-btn-primary:hover{background:#22180f;transform:translateY(-2px)}
+.mky-btn-ghost{
+  border:1px solid var(--mky-line);background:#fff;color:var(--mky-ink);padding:12px 24px;border-radius:26px;
+  font-size:15px;font-weight:600;transition:border-color .2s,color .2s,transform .18s;display:inline-flex;align-items:center;gap:8px;
+}
+.mky-btn-ghost:hover{border-color:var(--mky-amber);color:var(--mky-amber-dark);transform:translateY(-2px)}
+.mky-hero-stats{display:flex;gap:32px;flex-wrap:wrap}
+.mky-hero-stats li strong{display:block;font-size:26px;font-weight:800;color:var(--mky-amber-dark);line-height:1.2}
+.mky-hero-stats li span{font-size:12.6px;color:var(--mky-ink-soft);letter-spacing:.5px}
+
+.mky-hero-visual{position:relative}
+.mky-hero-frame{
+  border-radius:22px;overflow:hidden;box-shadow:0 22px 50px rgba(120,70,30,.24);
+  border:6px solid #fff;position:relative;background:#fff;
+}
+.mky-hero-frame img{width:100%;aspect-ratio:16/11;object-fit:cover}
+.mky-hero-frame .mky-hero-badge{
+  position:absolute;left:14px;top:14px;background:rgba(58,43,34,.82);color:#ffeede;
+  font-size:12px;padding:4px 12px;border-radius:20px;letter-spacing:1px;backdrop-filter:blur(4px);
+}
+.mky-hero-frame .mky-hero-play{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+}
+.mky-hero-frame .mky-hero-play span{
+  width:64px;height:64px;border-radius:50%;background:rgba(255,248,242,.9);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,.25);
+  transition:transform .2s;
+}
+.mky-hero-frame:hover .mky-hero-play span{transform:scale(1.09)}
+.mky-hero-frame .mky-hero-play svg{width:22px;height:22px;fill:var(--mky-amber);margin-left:3px}
+.mky-hero-float{
+  position:absolute;bottom:-22px;left:-20px;background:#fff;border-radius:14px;
+  box-shadow:var(--mky-shadow);padding:12px 18px;display:flex;align-items:center;gap:10px;
+  border:1px solid var(--mky-line);
+}
+.mky-hero-float i{
+  width:34px;height:34px;border-radius:50%;background:var(--mky-sand);color:var(--mky-amber-dark);
+  display:flex;align-items:center;justify-content:center;font-style:normal;font-size:15px;
+}
+.mky-hero-float strong{font-size:14px;display:block}
+.mky-hero-float small{font-size:11.6px;color:var(--mky-ink-soft)}
+
+/* ============ 通用区块 ============ */
+.mky-section{padding:64px 0}
+.mky-section-soft{background:linear-gradient(180deg,#fff 0%,var(--mky-sand) 100%);border-top:1px solid var(--mky-line);border-bottom:1px solid var(--mky-line)}
+.mky-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px;flex-wrap:wrap}
+.mky-section-head .mky-eyebrow{
+  font-size:12.6px;letter-spacing:2.5px;color:var(--mky-amber-dark);font-weight:700;text-transform:uppercase;
+  display:flex;align-items:center;gap:8px;
+}
+.mky-section-head .mky-eyebrow::before{content:"";width:22px;height:2px;background:var(--mky-amber);border-radius:2px}
+.mky-section-head h2{font-size:clamp(25px,3.2vw,34px);letter-spacing:.5px;margin-top:8px;color:var(--mky-ink);font-weight:800}
+.mky-section-head p{font-size:14.4px;color:var(--mky-ink-soft);max-width:560px;margin-top:8px}
+.mky-more-link{
+  font-size:14px;color:var(--mky-amber-dark);font-weight:600;white-space:nowrap;
+  border-bottom:1px dashed rgba(185,64,28,.4);padding-bottom:2px;
+}
+.mky-more-link:hover{border-bottom-style:solid}
+
+/* ============ 关于/深度解析 ============ */
+.mky-about-grid{display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:start}
+.mky-about-side{
+  background:#fff;border-radius:var(--mky-radius);padding:28px;border:1px solid var(--mky-line);
+  box-shadow:var(--mky-shadow);position:sticky;top:200px;
+}
+.mky-about-side h3{font-size:19px;margin-bottom:14px;color:var(--mky-ink)}
+.mky-about-list li{
+  display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed var(--mky-line);font-size:14px;color:var(--mky-ink-soft);
+}
+.mky-about-list li:last-child{border-bottom:none}
+.mky-about-list li b{color:var(--mky-amber-dark);flex-shrink:0;font-size:13px;background:var(--mky-sand);border-radius:6px;padding:1px 8px;height:fit-content;margin-top:2px}
+.mky-about-body h3{font-size:20px;margin:26px 0 10px;color:var(--mky-ink);display:flex;align-items:center;gap:9px}
+.mky-about-body h3::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(180deg,var(--mky-amber),var(--mky-gold))}
+.mky-about-body h3:first-child{margin-top:0}
+.mky-about-body p{font-size:15.2px;color:#54433a;margin-bottom:12px;text-align:justify}
+.mky-about-body p strong{color:var(--mky-amber-dark)}
+
+/* ============ 焦点视频 ============ */
+.mky-focus-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:26px}
+.mky-focus-main{
+  position:relative;border-radius:20px;overflow:hidden;box-shadow:0 16px 40px rgba(120,70,30,.2);min-height:380px;
+  display:flex;align-items:flex-end;
+}
+.mky-focus-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mky-focus-main .mky-focus-mask{
+  position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,18,10,0) 30%,rgba(30,18,10,.78) 100%);
+}
+.mky-focus-main .mky-focus-content{position:relative;z-index:2;padding:30px;color:#fff8f2}
+.mky-focus-main .mky-tag-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.mky-tag{
+  font-size:11.6px;padding:3px 11px;border-radius:16px;background:rgba(255,248,242,.2);
+  border:1px solid rgba(255,248,242,.4);color:#fff8f2;letter-spacing:.5px;backdrop-filter:blur(3px);
+}
+.mky-tag-solid{background:var(--mky-amber);border-color:var(--mky-amber);color:#fff}
+.mky-focus-main h3{font-size:24px;line-height:1.35;margin-bottom:8px;font-weight:800}
+.mky-focus-main p{font-size:13.8px;color:#f0dccb;max-width:520px;margin-bottom:14px}
+.mky-focus-meta{display:flex;gap:16px;font-size:12.6px;color:#e3c9b4;flex-wrap:wrap}
+.mky-focus-side{display:grid;grid-template-rows:repeat(2,1fr);gap:20px}
+.mky-mini-card{
+  display:flex;gap:16px;background:#fff;border-radius:16px;padding:14px;border:1px solid var(--mky-line);
+  box-shadow:0 6px 18px rgba(120,70,30,.08);transition:transform .2s,box-shadow .2s;
+}
+.mky-mini-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(120,70,30,.16)}
+.mky-mini-card .mky-mini-thumb{width:132px;flex-shrink:0;border-radius:11px;overflow:hidden;position:relative}
+.mky-mini-card .mky-mini-thumb img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
+.mky-mini-card .mky-mini-body{display:flex;flex-direction:column;justify-content:center;gap:5px;min-width:0}
+.mky-mini-card h4{font-size:15.4px;line-height:1.4;color:var(--mky-ink);font-weight:700}
+.mky-mini-card .mky-mini-sub{font-size:12.4px;color:var(--mky-ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mky-mini-card .mky-mini-tags{display:flex;gap:6px;flex-wrap:wrap}
+.mky-mini-card .mky-mini-tags span{font-size:11px;background:var(--mky-sand);color:var(--mky-amber-dark);padding:1px 8px;border-radius:10px}
+
+/* ============ 视频流 ============ */
+.mky-filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.mky-chip{
+  font-size:13.2px;padding:6px 16px;border-radius:20px;border:1px solid var(--mky-line);background:#fff;
+  color:var(--mky-ink-soft);transition:all .18s;
+}
+.mky-chip:hover{border-color:var(--mky-amber);color:var(--mky-amber-dark)}
+.mky-chip.is-active{background:var(--mky-amber);border-color:var(--mky-amber);color:#fff;font-weight:600}
+.mky-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.mky-video-card{
+  background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--mky-line);
+  box-shadow:0 6px 18px rgba(120,70,30,.07);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column;
+}
+.mky-video-card:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(120,70,30,.16)}
+.mky-video-cover{position:relative;aspect-ratio:16/9;overflow:hidden}
+.mky-video-cover img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.mky-video-card:hover .mky-video-cover img{transform:scale(1.05)}
+.mky-video-cover .mky-cover-tag{
+  position:absolute;left:10px;top:10px;font-size:11px;background:rgba(58,43,34,.78);color:#ffeede;
+  padding:2px 10px;border-radius:14px;backdrop-filter:blur(3px);
+}
+.mky-video-cover .mky-cover-play{
+  position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;
+  background:rgba(255,248,242,.9);display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:translateY(6px);transition:all .25s;
+}
+.mky-video-card:hover .mky-cover-play{opacity:1;transform:translateY(0)}
+.mky-cover-play svg{width:13px;height:13px;fill:var(--mky-amber);margin-left:2px}
+.mky-video-body{padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.mky-video-body h4{font-size:15.6px;line-height:1.42;font-weight:700;color:var(--mky-ink)}
+.mky-video-body .mky-video-excerpt{font-size:12.8px;color:var(--mky-ink-soft);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mky-video-tags{display:flex;gap:6px;flex-wrap:wrap}
+.mky-video-tags span{font-size:11px;background:var(--mky-sand);color:var(--mky-amber-dark);padding:1px 8px;border-radius:10px}
+.mky-video-foot{
+  margin-top:auto;padding-top:10px;border-top:1px dashed var(--mky-line);
+  display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.2px;color:var(--mky-ink-soft);
+}
+.mky-video-author{display:flex;align-items:center;gap:7px;min-width:0}
+.mky-avatar{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700}
+.mky-video-ops{display:flex;gap:4px;flex-shrink:0}
+.mky-op-btn{
+  display:flex;align-items:center;gap:3px;padding:3px 6px;border-radius:12px;font-size:11.8px;
+  color:var(--mky-ink-soft);transition:background .18s,color .18s;
+}
+.mky-op-btn:hover{background:var(--mky-sand);color:var(--mky-amber-dark)}
+.mky-op-btn svg{width:13px;height:13px}
+.mky-op-btn.is-liked{color:var(--mky-amber);font-weight:700}
+.mky-op-btn.is-saved{color:var(--mky-gold)}
+
+/* ============ 专题模块 ============ */
+.mky-topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.mky-topic-card{
+  background:#fff;border:1px solid var(--mky-line);border-radius:16px;overflow:hidden;
+  box-shadow:0 6px 18px rgba(120,70,30,.07);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column;
+}
+.mky-topic-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(120,70,30,.15)}
+.mky-topic-card .mky-topic-cover{aspect-ratio:16/10;overflow:hidden}
+.mky-topic-card .mky-topic-cover img{width:100%;height:100%;object-fit:cover}
+.mky-topic-content{padding:16px;display:flex;flex-direction:column;gap:7px;flex:1}
+.mky-topic-status{
+  align-self:flex-start;font-size:11px;padding:2px 10px;border-radius:12px;background:var(--mky-sand);color:var(--mky-amber-dark);font-weight:600;
+}
+.mky-topic-status.mky-live{background:rgba(226,87,43,.14);color:var(--mky-amber-dark)}
+.mky-topic-content h4{font-size:15.4px;font-weight:700;line-height:1.4}
+.mky-topic-content p{font-size:12.7px;color:var(--mky-ink-soft);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ============ 创作者矩阵 ============ */
+.mky-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.mky-creator-card{
+  background:#fff;border:1px solid var(--mky-line);border-radius:18px;padding:24px 18px;text-align:center;
+  box-shadow:0 6px 18px rgba(120,70,30,.07);transition:transform .22s,box-shadow .22s,border-color .2s;
+  cursor:pointer;
+}
+.mky-creator-card:hover{transform:translateY(-4px);border-color:var(--mky-amber);box-shadow:0 16px 32px rgba(120,70,30,.16)}
+.mky-creator-card .mky-avatar-lg{width:70px;height:70px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;font-weight:800;box-shadow:0 6px 16px rgba(0,0,0,.14)}
+.mky-creator-card h3{font-size:17px;margin-bottom:3px}
+.mky-creator-card .mky-creator-field{font-size:12.4px;color:var(--mky-amber-dark);font-weight:600;margin-bottom:8px}
+.mky-creator-card p{font-size:12.6px;color:var(--mky-ink-soft);line-height:1.6;min-height:40px}
+.mky-creator-nums{display:flex;justify-content:center;gap:18px;margin-top:12px;padding-top:12px;border-top:1px dashed var(--mky-line);font-size:12px;color:var(--mky-ink-soft)}
+.mky-creator-nums strong{display:block;font-size:15px;color:var(--mky-ink)}
+
+/* ============ 故事区 ============ */
+.mky-story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.mky-story-card{
+  background:#fff;border-radius:16px;padding:26px 22px;border:1px solid var(--mky-line);
+  position:relative;box-shadow:0 6px 18px rgba(120,70,30,.06);transition:transform .2s;
+}
+.mky-story-card:hover{transform:translateY(-3px)}
+.mky-story-card::before{
+  content:"“";position:absolute;top:6px;right:18px;font-size:56px;color:rgba(226,87,43,.14);font-family:Georgia,serif;line-height:1;
+}
+.mky-story-card h4{font-size:16.4px;margin-bottom:10px;line-height:1.4}
+.mky-story-card p{font-size:13.4px;color:var(--mky-ink-soft);text-align:justify}
+.mky-story-who{margin-top:14px;padding-top:12px;border-top:1px dashed var(--mky-line);font-size:12.4px;color:var(--mky-amber-dark);font-weight:600;display:flex;align-items:center;gap:8px}
+
+/* ============ 影像墙 ============ */
+.mky-wall{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:130px;gap:14px}
+.mky-wall-item{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 6px 16px rgba(120,70,30,.1)}
+.mky-wall-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.mky-wall-item:hover img{transform:scale(1.07)}
+.mky-wall-item span{
+  position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:12px;color:#fff8f2;
+  background:linear-gradient(180deg,transparent,rgba(30,18,10,.78));
+}
+.mky-wall-wide{grid-column:span 2}
+.mky-wall-tall{grid-row:span 2}
+.mky-wall-big{grid-column:span 2;grid-row:span 2}
+
+/* ============ 评价 ============ */
+.mky-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mky-review{
+  background:#fff;border-radius:14px;padding:20px;border:1px solid var(--mky-line);
+  box-shadow:0 5px 15px rgba(120,70,30,.06);display:flex;flex-direction:column;gap:10px;
+}
+.mky-review-top{display:flex;align-items:center;gap:10px}
+.mky-review-top .mky-avatar{width:34px;height:34px;font-size:13px}
+.mky-review-top strong{font-size:14px;display:block}
+.mky-review-top small{font-size:11.5px;color:var(--mky-ink-soft)}
+.mky-review-stars{color:var(--mky-gold);font-size:13px;letter-spacing:2px}
+.mky-review p{font-size:13.3px;color:#5b4a40;line-height:1.7}
+
+/* ============ 更新日志 ============ */
+.mky-news-list{display:flex;flex-direction:column;gap:0}
+.mky-news-item{
+  display:grid;grid-template-columns:120px 1fr auto;gap:18px;align-items:center;
+  padding:18px 4px;border-bottom:1px dashed var(--mky-line);transition:background .18s;
+}
+.mky-news-item:first-child{border-top:1px dashed var(--mky-line)}
+.mky-news-item:hover{background:rgba(244,230,216,.5)}
+.mky-news-date{font-size:12.6px;color:var(--mky-amber-dark);font-weight:700;letter-spacing:.5px}
+.mky-news-item h4{font-size:15.2px;font-weight:600}
+.mky-news-item p{font-size:12.8px;color:var(--mky-ink-soft)}
+.mky-news-item .mky-news-type{font-size:11.4px;background:var(--mky-sand);color:var(--mky-amber-dark);padding:2px 10px;border-radius:12px;white-space:nowrap}
+.mky-news-item button.mky-news-type{cursor:pointer;border:none}
+
+/* ============ FAQ ============ */
+.mky-faq{max-width:860px;margin:0 auto}
+.mky-faq details{
+  background:#fff;border:1px solid var(--mky-line);border-radius:13px;margin-bottom:12px;overflow:hidden;
+  transition:box-shadow .2s;
+}
+.mky-faq details[open]{box-shadow:0 8px 22px rgba(120,70,30,.1);border-color:var(--mky-amber)}
+.mky-faq summary{
+  list-style:none;cursor:pointer;padding:16px 20px;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;color:var(--mky-ink);
+}
+.mky-faq summary::-webkit-details-marker{display:none}
+.mky-faq summary::after{content:"+";font-size:20px;color:var(--mky-amber);font-weight:400;transition:transform .2s}
+.mky-faq details[open] summary::after{content:"−"}
+.mky-faq details p{padding:0 20px 18px;font-size:13.8px;color:var(--mky-ink-soft);line-height:1.8}
+
+/* ============ 联系/投稿 ============ */
+.mky-contact-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;
+}
+.mky-contact-panel{
+  background:linear-gradient(150deg,#3a2b22,#5a3d2b 70%,#7a4a24);
+  border-radius:20px;padding:36px;color:#ffeede;position:relative;overflow:hidden;
+}
+.mky-contact-panel::after{
+  content:"";position:absolute;right:-70px;bottom:-70px;width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(226,87,43,.4),transparent 68%);
+}
+.mky-contact-panel h3{font-size:23px;margin-bottom:10px}
+.mky-contact-panel p{font-size:14px;color:#e8d2c0;margin-bottom:20px;max-width:400px}
+.mky-contact-lines{display:flex;flex-direction:column;gap:12px;position:relative;z-index:2}
+.mky-contact-lines li{display:flex;gap:10px;font-size:13.6px;align-items:center;color:#f0dcca}
+.mky-contact-lines li i{
+  width:28px;height:28px;border-radius:8px;background:rgba(255,248,242,.14);display:flex;align-items:center;justify-content:center;
+  font-style:normal;font-size:13px;flex-shrink:0;
+}
+.mky-contact-actions{display:flex;gap:10px;margin-top:22px;position:relative;z-index:2;flex-wrap:wrap}
+.mky-btn-light{
+  background:#fff8f2;color:var(--mky-ink);padding:10px 22px;border-radius:24px;font-size:14px;font-weight:600;
+  transition:transform .18s,background .2s;
+}
+.mky-btn-light:hover{transform:translateY(-2px);background:#ffe9d6}
+.mky-btn-outline-light{
+  border:1px solid rgba(255,248,242,.5);color:#ffeede;padding:10px 22px;border-radius:24px;font-size:14px;font-weight:600;
+  transition:background .2s,border-color .2s;
+}
+.mky-btn-outline-light:hover{background:rgba(255,248,242,.12);border-color:#fff8f2}
+.mky-collab{
+  background:#fff;border:1px solid var(--mky-line);border-radius:20px;padding:30px;box-shadow:var(--mky-shadow);
+  display:flex;flex-direction:column;gap:14px;
+}
+.mky-collab h3{font-size:20px}
+.mky-collab p{font-size:13.8px;color:var(--mky-ink-soft)}
+.mky-brand-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:auto}
+.mky-brand-wall span{
+  background:var(--mky-sand);border-radius:10px;padding:12px 8px;text-align:center;font-size:12.6px;color:var(--mky-ink-soft);
+  font-weight:600;letter-spacing:.5px;transition:background .2s,color .2s;
+}
+.mky-brand-wall span:hover{background:var(--mky-amber);color:#fff}
+
+/* ============ 页脚 ============ */
+.mky-footer{background:#2c2019;color:#d8c4b4;padding:52px 0 0;margin-top:20px}
+.mky-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:38px}
+.mky-footer-brand .mky-logo-words strong{color:#fff8f2}
+.mky-footer-brand .mky-logo-words span{color:#a98e7a}
+.mky-footer-brand p{font-size:13.2px;color:#b39c8a;margin-top:16px;max-width:280px;line-height:1.8}
+.mky-footer h4{font-size:14.5px;color:#fff8f2;margin-bottom:14px;letter-spacing:.5px}
+.mky-footer ul li{margin-bottom:9px}
+.mky-footer ul a{font-size:13.2px;color:#b39c8a;transition:color .18s}
+.mky-footer ul a:hover{color:var(--mky-amber)}
+.mky-footer-bottom{
+  border-top:1px solid rgba(216,196,180,.16);padding:20px 0;display:flex;flex-wrap:wrap;gap:12px;
+  align-items:center;justify-content:space-between;font-size:12.4px;color:#9b8371;
+}
+.mky-footer-bottom .mky-footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.mky-footer-bottom a:hover{color:var(--mky-amber)}
+
+/* ============ 回到顶部 ============ */
+.mky-top-btn{
+  position:fixed;right:26px;bottom:26px;width:48px;height:48px;border-radius:50%;
+  background:var(--mky-ink);color:#fff8f2;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 22px rgba(0,0,0,.24);opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:all .25s;z-index:90;
+}
+.mky-top-btn.is-show{opacity:1;visibility:visible;transform:translateY(0)}
+.mky-top-btn:hover{background:var(--mky-amber)}
+.mky-top-btn svg{width:18px;height:18px;fill:#fff8f2}
+
+/* ============ 弹窗 & Toast ============ */
+.mky-modal{
+  position:fixed;inset:0;background:rgba(30,18,10,.55);display:none;align-items:center;justify-content:center;
+  z-index:200;padding:20px;backdrop-filter:blur(3px);
+}
+.mky-modal.is-open{display:flex}
+.mky-modal-box{
+  background:#fff;border-radius:18px;padding:28px;width:min(480px,100%);box-shadow:0 26px 60px rgba(0,0,0,.3);
+  max-height:88vh;overflow:auto;position:relative;
+}
+.mky-modal-box h3{font-size:19px;margin-bottom:6px}
+.mky-modal-box .mky-modal-sub{font-size:13px;color:var(--mky-ink-soft);margin-bottom:16px}
+.mky-modal-close{
+  position:absolute;right:14px;top:12px;width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--mky-ink-soft);
+}
+.mky-modal-close:hover{background:var(--mky-sand);color:var(--mky-amber-dark)}
+.mky-field{margin-bottom:13px}
+.mky-field label{display:block;font-size:12.8px;font-weight:600;margin-bottom:5px;color:var(--mky-ink)}
+.mky-field input,.mky-field textarea,.mky-field select{
+  width:100%;padding:10px 13px;border-radius:10px;border:1px solid var(--mky-line);
+  font-size:13.6px;font-family:inherit;color:var(--mky-ink);background:#fffdfa;outline:none;transition:border-color .2s,box-shadow .2s;
+}
+.mky-field input:focus,.mky-field textarea:focus,.mky-field select:focus{border-color:var(--mky-amber);box-shadow:0 0 0 3px rgba(226,87,43,.12)}
+.mky-field textarea{resize:vertical;min-height:88px}
+.mky-modal-actions{display:flex;gap:10px;margin-top:6px}
+.mky-modal-actions button{flex:1;padding:11px;border-radius:12px;font-size:14px;font-weight:600;transition:transform .18s,background .2s}
+.mky-modal-submit{background:var(--mky-amber);color:#fff}
+.mky-modal-submit:hover{background:var(--mky-amber-dark)}
+.mky-modal-cancel{background:var(--mky-sand);color:var(--mky-ink)}
+.mky-modal-cancel:hover{background:#e9d6c2}
+.mky-share-row{display:flex;gap:10px;flex-wrap:wrap}
+.mky-share-row button{
+  flex:1;min-width:96px;padding:12px 10px;border-radius:12px;background:var(--mky-sand);color:var(--mky-ink);
+  font-size:13px;font-weight:600;transition:background .2s,transform .18s;
+}
+.mky-share-row button:hover{background:var(--mky-amber);color:#fff;transform:translateY(-2px)}
+.mky-toast{
+  position:fixed;left:50%;bottom:38px;transform:translate(-50%,20px);background:rgba(44,32,25,.94);
+  color:#fff8f2;padding:11px 24px;border-radius:26px;font-size:13.6px;z-index:300;opacity:0;
+  transition:opacity .25s,transform .25s;pointer-events:none;box-shadow:0 10px 28px rgba(0,0,0,.28);
+}
+.mky-toast.is-show{opacity:1;transform:translate(-50%,0)}
+
+/* ============ 响应式 ============ */
+@media (max-width:1024px){
+  .mky-hero-grid{grid-template-columns:1fr;gap:36px}
+  .mky-about-grid{grid-template-columns:1fr;gap:26px}
+  .mky-about-side{position:static}
+  .mky-focus-grid{grid-template-columns:1fr}
+  .mky-video-grid{grid-template-columns:repeat(2,1fr)}
+  .mky-topic-grid{grid-template-columns:repeat(2,1fr)}
+  .mky-creator-grid{grid-template-columns:repeat(2,1fr)}
+  .mky-review-grid{grid-template-columns:repeat(2,1fr)}
+  .mky-story-grid{grid-template-columns:1fr}
+  .mky-contact-wrap{grid-template-columns:1fr}
+  .mky-footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .mky-nav{
+    position:absolute;left:0;right:0;top:100%;background:#fffdfa;flex-direction:column;
+    padding:10px 5%;border-bottom:1px solid var(--mky-line);box-shadow:0 14px 26px rgba(120,70,30,.12);
+    display:none;gap:2px;margin-left:0;
+  }
+  .mky-nav.is-open{display:flex}
+  .mky-nav a{padding:11px 14px;border-radius:10px}
+  .mky-search input{width:130px}
+  .mky-search input:focus{width:150px}
+  .mky-btn-submit{display:none}
+  .mky-header-inner{position:relative}
+  .mky-header-tools{margin-left:auto}
+  .mky-burger{display:flex;margin-left:8px}
+  .mky-wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px}
+  .mky-wall-big{grid-column:span 2;grid-row:span 1}
+  .mky-wall-tall{grid-row:span 1}
+  .mky-news-item{grid-template-columns:1fr;gap:4px}
+  .mky-news-date{order:-1}
+  .mky-news-item .mky-news-type{justify-self:start}
+}
+@media (max-width:560px){
+  .mky-video-grid{grid-template-columns:1fr}
+  .mky-topic-grid{grid-template-columns:1fr}
+  .mky-creator-grid{grid-template-columns:1fr}
+  .mky-review-grid{grid-template-columns:1fr}
+  .mky-footer-grid{grid-template-columns:1fr}
+  .mky-hero-stats{gap:22px}
+  .mky-mini-card{flex-direction:column}
+  .mky-mini-card .mky-mini-thumb{width:100%}
+  .mky-hero-float{left:auto;right:0;bottom:-16px}
+  .mky-notice-links{display:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<div class="mky-sticky-head">
+  <div class="mky-notice-bar" id="mky-notice">
+    <div class="mky-container mky-notice-inner">
+      <span class="mky-notice-tag">官方发布</span>
+      <p class="mky-notice-text"><b>每日看料one</b> 十一月「城市清晨」专题已上线，新增 12 支原创短片；创作者投稿通道同步开放。</p>
+      <div class="mky-notice-links">
+        <a href="#mky-topic">查看专题</a>
+        <a href="#mky-news">更新日志</a>
+      </div>
+    </div>
+  </div>
+  <header class="mky-header">
+    <div class="mky-container mky-header-inner">
+      <a class="mky-logo" href="#mky-top" aria-label="每日看料one 官网首页">
+        <span class="mky-logo-mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <span class="mky-logo-words">
+          <strong>每日看料one</strong>
+          <span>DAILY KANLIAO ONE</span>
+        </span>
+      </a>
+      <nav class="mky-nav" id="mky-nav" aria-label="主导航">
+        <a href="#mky-top" class="is-active">首页</a>
+        <a href="#mky-focus">焦点内容</a>
+        <a href="#mky-videos">热门影像</a>
+        <a href="#mky-topic">专题企划</a>
+        <a href="#mky-creators">创作者</a>
+        <a href="#mky-news">企业动态</a>
+        <a href="#mky-faq">帮助</a>
+        <a href="#mky-contact">联系</a>
+      </nav>
+      <div class="mky-header-tools">
+        <div class="mky-search">
+          <label class="mky-sr-only" for="mky-search-input">搜索每日看料one内容</label>
+          <input type="text" id="mky-search-input" placeholder="搜索视频、专题、创作者" autocomplete="off">
+          <button type="button" id="mky-search-btn" aria-label="搜索">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          </button>
+          <div class="mky-search-tip" id="mky-search-tip"></div>
+        </div>
+        <button type="button" class="mky-btn-submit" data-mky-open="submit">投稿入口</button>
+        <button type="button" class="mky-burger" id="mky-burger" aria-label="展开导航" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="mky-top">
+  <!-- 首屏 -->
+  <section class="mky-hero">
+    <div class="mky-container mky-hero-grid">
+      <div class="mky-hero-copy">
+        <span class="mky-hero-kicker"><i>★</i> 每日看料one · 官方网站</span>
+        <h1>每日看料<em>one</em></h1>
+        <p class="mky-hero-lead">一家以生活影像为起点的视频品牌，把每天值得一看的内容，做成长久可留存的记录。</p>
+        <p class="mky-hero-desc">我们相信认真拍摄的日常自有力量。每日看料one 以原创短片、创作者社区与专题企划为核心，构建高品质、可持续的内容生态，陪伴企业与创作者一同成长。</p>
+        <div class="mky-hero-actions">
+          <a class="mky-btn-primary" href="#mky-videos">
+            浏览热门影像
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </a>
+          <a class="mky-btn-ghost" href="#mky-about">了解品牌</a>
+        </div>
+        <ul class="mky-hero-stats">
+          <li><strong data-mky-count="1860">0</strong><span>原创短片（支）</span></li>
+          <li><strong data-mky-count="328">0</strong><span>入驻创作者</span></li>
+          <li><strong data-mky-count="96">0</strong><span>合作品牌与企业</span></li>
+        </ul>
+      </div>
+      <div class="mky-hero-visual">
+        <figure class="mky-hero-frame">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 550'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f6c88a'/%3E%3Cstop offset='.55' stop-color='%23e2572b'/%3E%3Cstop offset='1' stop-color='%23a83c1c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='550' fill='url(%23g1)'/%3E%3Ccircle cx='640' cy='130' r='86' fill='%23fff2d6' opacity='.85'/%3E%3Cpath d='M0 400 Q180 330 330 380 T800 350 V550 H0 Z' fill='%233a2b22' opacity='.55'/%3E%3Cpath d='M0 460 Q200 400 400 440 T800 420 V550 H0 Z' fill='%23231810' opacity='.7'/%3E%3Crect x='120' y='250' width='150' height='180' rx='10' fill='%23fff8f2' opacity='.22'/%3E%3Crect x='300' y='210' width='110' height='220' rx='10' fill='%23fff8f2' opacity='.16'/%3E%3Crect x='450' y='280' width='130' height='150' rx='10' fill='%23fff8f2' opacity='.2'/%3E%3Cpath d='M380 120l70 40-70 40z' fill='%23fff8f2' opacity='.92'/%3E%3C/svg%3E" alt="每日看料one品牌主视觉：暖橙天空与城市轮廓中的影像符号" width="800" height="550">
+          <span class="mky-hero-badge">品牌主视觉 · 城市清晨</span>
+          <span class="mky-hero-play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </figure>
+        <div class="mky-hero-float">
+          <i>▶</i>
+          <div>
+            <strong>本周精选 · 12 支新片</strong>
+            <small>每日 10:00 更新 · 官方发布</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌解析 -->
+  <section class="mky-section" id="mky-about">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Brand Insight</span>
+          <h2>关于每日看料one：一个视频品牌的长期主义</h2>
+          <p>从一支短片到一套内容生态，我们更在意内容能否被反复观看与长久留存。</p>
+        </div>
+        <a class="mky-more-link" href="#mky-news">企业动态 →</a>
+      </div>
+      <div class="mky-about-grid">
+        <aside class="mky-about-side">
+          <h3>品牌速览</h3>
+          <ul class="mky-about-list">
+            <li><b>定位</b><span>生活方式影像视频品牌 · 官方网站</span></li>
+            <li><b>内核</b><span>真实、温暖、有信息增益的日常记录</span></li>
+            <li><b>形态</b><span>原创短片 + 专题企划 + 创作者社区</span></li>
+            <li><b>更新</b><span>每日精选更新，每周专题上线</span></li>
+            <li><b>城市</b><span>团队分布在杭州、成都与北京</span></li>
+            <li><b>合作</b><span>品牌定制、企业影像、联合企划</span></li>
+          </ul>
+        </aside>
+        <div class="mky-about-body">
+          <h3>品牌定位与名称由来</h3>
+          <p><strong>每日看料one</strong> 中的“每日”指向节奏，“看料”指向内容本身，而“one”则是我们对自己的要求：每天至少有一支影像，值得被认真看完。它不是一个堆量式的视频聚合站，而是一家持续运营、以原创与品质为底线的视频品牌。我们以官方网站的形式沉淀内容，让每一支短片都有稳定的入口、清晰的作者信息与可追溯的创作背景。</p>
+          <p>作为深耕生活方式与人文记录垂类的品牌平台，每日看料one 将内容分为三条主线：其一是<strong>原创短片</strong>，由内部导演团队与签约创作者共同完成；其二是<strong>专题企划</strong>，围绕季节、城市与具体议题组织系列内容；其三是<strong>社区影像</strong>，由用户投稿、编辑筛选后进入内容池。三条主线彼此补充，形成从专业生产到大众参与的完整内容生态。</p>
+          <h3>我们如何筛选与制作内容</h3>
+          <p>每日看料one 对内容的判断标准并不复杂：是否真实、是否提供信息增益、是否具备可反复观看的品质。真实意味着不摆拍、不虚构情境；信息增益意味着观众看完之后，能获得一种方法、一个视角或一段可被记住的情绪；品质则体现在画面、声音与叙事的完成度上。我们为每支进入首页的短片建立基础档案，记录拍摄时间、地点、器材与创作者意图，这些信息会以结构化方式呈现在作品页中，帮助观众理解影像背后的判断。</p>
+          <p>在制作流程上，品牌采用“编辑前置”的方式：选题会先由编辑与创作者共同确认叙事角度，再进入拍摄与后期。这样做的目的是避免内容陷入无意义的空镜堆砌，也让创作者在拍摄前就清楚自己真正想表达什么。对于企业合作内容，我们同样保留创作独立性，仅在企业事实与品牌信息层面进行必要校准，这也是每日看料one 能被创作者与品牌同时信任的原因之一。</p>
+          <h3>内容生态与创作者社区</h3>
+          <p>一个视频品牌的活力，最终来自创作者。每日看料one 目前有 328 位签约与合作创作者，覆盖城市探索、手作、美食、户外、家居、人物访谈等方向。我们为创作者提供选题协作、后期支持与分发建议，也定期组织线下看片会与创作交流会，让创作者之间形成真实的连接。社区不是流量池，而是彼此学习与互相激发的场所，这也是我们坚持做社区、做评论、做作者档案的原因。</p>
+          <p>品牌同时向企业开放内容合作：从品牌故事片、产品纪实到企业开放日影像，我们更擅长用记录的方式呈现企业真实的一面。过往合作覆盖食品、家居、户外装备、文旅与教育等行业，累计完成 96 个品牌项目。我们相信，企业内容同样需要真实与温度，而不是模板化的宣传片。</p>
+          <h3>我们希望留下的东西</h3>
+          <p>影像的价值不止于发布的那一刻。每日看料one 会持续整理内容档案，按主题、地域与年份建立可检索的索引，让今天拍摄的短片在三年后仍然能被找到。这是一种笨拙但有效的方式：用持续运营对抗内容速朽，用匠心对待每一次拍摄，用真实与温暖回应观众的注意力。我们期待与更多创作者、企业与同好一起，把“每天值得一看”这件事做得更久一些。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="mky-section mky-section-soft" id="mky-focus">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Focus</span>
+          <h2>焦点内容 · 编辑本周推荐</h2>
+          <p>由编辑部从近两周更新中挑出的重点影像，兼顾叙事完成度与信息价值。</p>
+        </div>
+        <a class="mky-more-link" href="#mky-videos">全部影像 →</a>
+      </div>
+      <div class="mky-focus-grid">
+        <article class="mky-focus-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f4858'/%3E%3Cstop offset='.6' stop-color='%235b7f8f'/%3E%3Cstop offset='1' stop-color='%23c9d9d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23f1)'/%3E%3Ccircle cx='620' cy='120' r='60' fill='%23f4e6d8' opacity='.7'/%3E%3Cpath d='M0 330 L140 260 L260 310 L380 240 L520 300 L660 230 L800 290 V500 H0 Z' fill='%23223038' opacity='.8'/%3E%3Cpath d='M0 390 L160 350 L300 400 L460 340 L620 390 L800 350 V500 H0 Z' fill='%23141c21' opacity='.85'/%3E%3Crect x='80' y='150' width='90' height='130' rx='6' fill='%23f4e6d8' opacity='.28'/%3E%3Crect x='200' y='110' width='60' height='170' rx='6' fill='%23f4e6d8' opacity='.2'/%3E%3C/svg%3E" alt="焦点短片城市清晨的桥面与雾气：每日看料one原创纪录" width="800" height="500">
+          <div class="mky-focus-mask"></div>
+          <div class="mky-focus-content">
+            <div class="mky-tag-row">
+              <span class="mky-tag mky-tag-solid">焦点首推</span>
+              <span class="mky-tag">城市探索</span>
+              <span class="mky-tag">纪录短片</span>
+            </div>
+            <h3>清晨六点，城市还没醒的那四十分钟</h3>
+            <p>跟拍三位早班工作者：环卫、早餐摊主与首班地铁司机，用四十分钟呈现一座城市苏醒前的秩序。</p>
+            <div class="mky-focus-meta">
+              <span>作者 · 顾南舟</span>
+              <span>时长 18:24</span>
+              <span>2026-11-15 发布</span>
+            </div>
+          </div>
+        </article>
+        <div class="mky-focus-side">
+          <article class="mky-mini-card">
+            <div class="mky-mini-thumb">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Cdefs%3E%3ClinearGradient id='m1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f0b878'/%3E%3Cstop offset='1' stop-color='%23d2763a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='200' fill='url(%23m1)'/%3E%3Ccircle cx='90' cy='100' r='52' fill='%23fff8f2' opacity='.35'/%3E%3Cpath d='M40 160 Q120 110 200 150 T320 140 V200 H40 Z' fill='%235c3318' opacity='.6'/%3E%3Crect x='150' y='60' width='80' height='80' rx='40' fill='%23fff8f2' opacity='.4'/%3E%3C/svg%3E" alt="清晨早餐摊蒸汽特写：城市清晨专题影像" width="320" height="200">
+            </div>
+            <div class="mky-mini-body">
+              <h4>一碗热汤面的十五分钟：早餐摊主的一天</h4>
+              <p class="mky-mini-sub">人物访谈 · 09:46 · 沈拾</p>
+              <div class="mky-mini-tags"><span>人物</span><span>烟火气</span></div>
+            </div>
+          </article>
+          <article class="mky-mini-card">
+            <div class="mky-mini-thumb">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Cdefs%3E%3ClinearGradient id='m2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%233f6b57'/%3E%3Cstop offset='1' stop-color='%238fc3a0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='200' fill='url(%23m2)'/%3E%3Cpath d='M0 140 Q80 100 160 130 T320 110 V200 H0 Z' fill='%232a4a3b' opacity='.7'/%3E%3Ccircle cx='240' cy='55' r='30' fill='%23eaf6ea' opacity='.55'/%3E%3Cpath d='M30 60 q20 -26 40 0 q-20 12 -40 0z' fill='%23eaf6ea' opacity='.5'/%3E%3C/svg%3E" alt="阳台绿植与晨光：家居收纳影像封面" width="320" height="200">
+            </div>
+            <div class="mky-mini-body">
+              <h4>把阳台改成一平米花园：低成本改造实录</h4>
+              <p class="mky-mini-sub">实用技巧 · 12:08 · 林砚</p>
+              <div class="mky-mini-tags"><span>家居</span><span>收纳</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门影像 -->
+  <section class="mky-section" id="mky-videos">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Trending</span>
+          <h2>热门影像 · 每日精选更新</h2>
+          <p>按题材筛选，看看与你同好的人最近都在看什么。</p>
+        </div>
+        <a class="mky-more-link" href="#mky-topic">专题企划 →</a>
+      </div>
+      <div class="mky-filter-row" id="mky-filter-row">
+        <button type="button" class="mky-chip is-active" data-mky-filter="all">全部</button>
+        <button type="button" class="mky-chip" data-mky-filter="城市探索">城市探索</button>
+        <button type="button" class="mky-chip" data-mky-filter="手作">手作</button>
+        <button type="button" class="mky-chip" data-mky-filter="美食">美食</button>
+        <button type="button" class="mky-chip" data-mky-filter="家居">家居</button>
+        <button type="button" class="mky-chip" data-mky-filter="人物访谈">人物访谈</button>
+        <button type="button" class="mky-chip" data-mky-filter="户外">户外</button>
+      </div>
+      <div class="mky-video-grid" id="mky-video-grid">
+        <article class="mky-video-card" data-mky-cat="城市探索">
+          <div class="mky-video-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Cdefs%3E%3ClinearGradient id='v1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23324a5e'/%3E%3Cstop offset='1' stop-color='%23a9c4cd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='225' fill='url(%23v1)'/%3E%3Cpath d='M0 150 L90 110 L180 145 L270 100 L400 140 V225 H0 Z' fill='%231e2c36' opacity='.8'/%3E%3Crect x='30' y='50' width='50' height='80' rx='4' fill='%23eaf2f4' opacity='.3'/%3E%3Crect x='100' y='30' width='34' height='100' rx='4' fill='%23eaf2f4' opacity='.22'/%3E%3C/svg%3E" alt="雨中老巷的路面反光：城市探索视频封面" width="400" height="225">
+            <span class="mky-cover-tag">城市探索</span>
+            <span class="mky-cover-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="mky-video-body">
+            <h4>雨天老巷：一条街在雨里的三种表情</h4>
+            <p class="mky-video-excerpt">从早市到傍晚收摊，同一条巷子在不同时段的湿度和光影，构成一部无旁白的城市观察。</p>
+            <div class="mky-video-tags"><span>城市探索</span><span>治愈影像</span></div>
+            <div class="mky-video-foot">
+              <div class="mky-video-author"><span class="mky-avatar" style="background:linear-gradient(135deg,#5b7f8f,#324a5e)">顾</span><span>顾南舟</span></div>
+              <div class="mky-video-ops">
+                <button type="button" class="mky-op-btn" data-mky-like><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-9.2-9C1.2 8.4 3 5 6.4 5c2 0 3.3 1.1 4.1 2.3l1.5 2 1.5-2C14.3 6.1 15.6 5 17.6 5 21 5 22.8 8.4 21.2 12 19 16.5 12 21 12 21z"/></svg><span>2.4k</span></button>
+                <button type="button" class="mky-op-btn" data-mky-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="mky-video-card" data-mky-cat="手作">
+          <div class="mky-video-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Cdefs%3E%3ClinearGradient id='v2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c98a2e'/%3E%3Cstop offset='1' stop-color='%236b4a1f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='225' fill='url(%23v2)'/%3E%3Ccircle cx='150' cy='112' r='58' fill='none' stroke='%23f4e6d8' stroke-width='10' opacity='.7'/%3E%3Ccircle cx='150' cy='112' r='30' fill='%23f4e6d8' opacity='.3'/%3E%3Cpath d='M240 40 l10 60 l60 10 l-60 10 l-10 60 l-10 -60 l-60 -10 l60 -10z' fill='%23fff2d6' opacity='.6'/%3E%3Crect x='290' y='150' width='80' height='54' rx='6' fill='%23fff2d6' opacity='.2'/%3E%3C/svg%3E" alt="陶土在拉坯机上的手部特写：手作视频封面" width="400" height="225">
+            <span class="mky-cover-tag">手作</span>
+            <span class="mky-cover-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="mky-video-body">
+            <h4>第一次拉坯就翻车：陶艺新手的四次失败</h4>
+            <p class="mky-video-excerpt">不剪掉失败的过程，只保留手与泥的真实反应，一支关于耐心与手感的手作纪录。</p>
+            <div class="mky-video-tags"><span>手作</span><span>创作幕后</span></div>
+            <div class="mky-video-foot">
+              <div class="mky-video-author"><span class="mky-avatar" style="background:linear-gradient(135deg,#c98a2e,#6b4a1f)">陶</span><span>陶山手记</span></div>
+              <div class="mky-video-ops">
+                <button type="button" class="mky-op-btn" data-mky-like><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-9.2-9C1.2 8.4 3 5 6.4 5c2 0 3.3 1.1 4.1 2.3l1.5 2 1.5-2C14.3 6.1 15.6 5 17.6 5 21 5 22.8 8.4 21.2 12 19 16.5 12 21 12 21z"/></svg><span>1.8k</span></button>
+                <button type="button" class="mky-op-btn" data-mky-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="mky-video-card" data-mky-cat="美食">
+          <div class="mky-video-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Cdefs%3E%3ClinearGradient id='v3' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23f7e2c0'/%3E%3Cstop offset='1' stop-color='%23d4552b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='225' fill='url(%23v3)'/%3E%3Cellipse cx='200' cy='150' rx='120' ry='46' fill='%23fff8f2' opacity='.55'/%3E%3Cellipse cx='200' cy='140' rx='88' ry='32' fill='%23c74d22' opacity='.6'/%3E%3Cpath d='M120 100 q20 -50 40 0' stroke='%23fff8f2' stroke-width='6' fill='none' opacity='.5' stroke-linecap='round'/%3E%3Cpath d='M200 95 q20 -56 40 0' stroke='%23fff8f2' stroke-width='6' fill='none' opacity='.45' stroke-linecap='round'/%3E%3Cpath d='M270 100 q20 -50 40 0' stroke='%23fff8f2' stroke-width='6' fill='none' opacity='.4' stroke-linecap='round'/%3E%3C/svg%3E" alt="热气升腾的一碗面：美食视频封面" width="400" height="225">
+            <span class="mky-cover-tag">美食</span>
+            <span class="mky-cover-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="mky-video-body">
+            <h4>十分钟一锅面：给加班夜归的人的热汤</h4>
+            <p class="mky-video-excerpt">不追求复杂调味，用三样常备食材做一碗能让人安静下来的面，附带时间轴拆解。</p>
+            <div class="mky-video-tags"><span>美食</span><span>实用技巧</span></div>
+            <div class="mky-video-foot">
+              <div class="mky-video-author"><span class="mky-avatar" style="background:linear-gradient(135deg,#d4552b,#8f2f12)">沈</span><span>沈拾</span></div>
+              <div class="mky-video-ops">
+                <button type="button" class="mky-op-btn" data-mky-like><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-9.2-9C1.2 8.4 3 5 6.4 5c2 0 3.3 1.1 4.1 2.3l1.5 2 1.5-2C14.3 6.1 15.6 5 17.6 5 21 5 22.8 8.4 21.2 12 19 16.5 12 21 12 21z"/></svg><span>3.1k</span></button>
+                <button type="button" class="mky-op-btn" data-mky-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="mky-video-card" data-mky-cat="家居">
+          <div class="mky-video-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Cdefs%3E%3ClinearGradient id='v4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e8efe6'/%3E%3Cstop offset='1' stop-color='%237fa07e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='225' fill='url(%23v4)'/%3E%3Crect x='30' y='120' width='340' height='16' rx='4' fill='%236e4b30' opacity='.65'/%3E%3Crect x='60' y='60' width='70' height='60' rx='6' fill='%23fff8f2' opacity='.55'/%3E%3Crect x='150' y='80' width='48' height='40' rx='6' fill='%23fff8f2' opacity='.4'/%3E%3Ccircle cx='290' cy='86' r='28' fill='%23fff8f2' opacity='.4'/%3E%3Cpath d='M250 120 q10 -34 20 0z' fill='%233f6b57' opacity='.6'/%3E%3C/svg%3E" alt="白色置物架与绿植：家居收纳视频封面" width="400" height="225">
+            <span class="mky-cover-tag">家居</span>
+            <span class="mky-cover-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="mky-video-body">
+            <h4>小户型不砸墙：用三层收纳解决八成杂物</h4>
+            <p class="mky-video-excerpt">一位租房七年的设计师，分享他反复验证过的收纳逻辑：先分类，再选容器，最后才是摆放。</p>
+            <div class="mky-video-tags"><span>家居</span><span>实用技巧</span></div>
+            <div class="mky-video-foot">
+              <div class="mky-video-author"><span class="mky-avatar" style="background:linear-gradient(135deg,#7fa07e,#3f6b57)">林</span><span>林砚</span></div>
+              <div class="mky-video-ops">
+                <button type="button" class="mky-op-btn" data-mky-like><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-9.2-9C1.2 8.4 3 5 6.4 5c2 0 3.3 1.1 4.1 2.3l1.5 2 1.5-2C14.3 6.1 15.6 5 17.6 5 21 5 22.8 8.4 21.2 12 19 16.5 12 21 12 21z"/></svg><span>2.2k</span></button>
+                <button type="button" class="mky-op-btn" data-mky-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="mky-video-card" data-mky-cat="人物访谈">
+          <div class="mky-video-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Cdefs%3E%3ClinearGradient id='v5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23b9a6c9'/%3E%3Cstop offset='1' stop-color='%23554a6b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='225' fill='url(%23v5)'/%3E%3Ccircle cx='200' cy='108' r='44' fill='%23f4e6d8' opacity='.55'/%3E%3Cpath d='M140 225 q60 -70 120 0z' fill='%23f4e6d8' opacity='.4'/%3E%3Crect x='40' y='40' width='60' height='60' rx='8' fill='%23f4e6d8' opacity='.2'/%3E%3Crect x='300' y='120' width='70' height='70' rx='8' fill='%23f4e6d8' opacity='.2'/%3E%3C/svg%3E" alt="受访者剪影与柔光背景：人物访谈视频封面" width="400" height="225">
+            <span class="mky-cover-tag">人物访谈</span>
+            <span class="mky-cover-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="mky-video-body">
+            <h4>访谈：做了十二年独立书店，他如何理解“留下”</h4>
+            <p class="mky-video-excerpt">从选书、办活动到与读者相处，一场关于长期主义的平静对话，没有金句，只有经验。</p>
+            <div class="mky-video-tags"><span>人物访谈</span><span>品牌故事</span></div>
+            <div class="mky-video-foot">
+              <div class="mky-video-author"><span class="mky-avatar" style="background:linear-gradient(135deg,#b9a6c9,#554a6b)">闻</span><span>闻野</span></div>
+              <div class="mky-video-ops">
+                <button type="button" class="mky-op-btn" data-mky-like><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-9.2-9C1.2 8.4 3 5 6.4 5c2 0 3.3 1.1 4.1 2.3l1.5 2 1.5-2C14.3 6.1 15.6 5 17.6 5 21 5 22.8 8.4 21.2 12 19 16.5 12 21 12 21z"/></svg><span>1.5k</span></button>
+                <button type="button" class="mky-op-btn" data-mky-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="mky-video-card" data-mky-cat="户外">
+          <div class="mky-video-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Cdefs%3E%3ClinearGradient id='v6' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23a9cfd0'/%3E%3Cstop offset='1' stop-color='%233a5f52'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='225' fill='url(%23v6)'/%3E%3Cpath d='M0 160 L90 90 L170 150 L250 80 L400 150 V225 H0 Z' fill='%23283f36' opacity='.8'/%3E%3Cpath d='M0 190 L120 150 L240 185 L340 155 L400 175 V225 H0 Z' fill='%23172a23' opacity='.85'/%3E%3Ccircle cx='320' cy='54' r='26' fill='%23f4e6d8' opacity='.5'/%3E%3C/svg%3E" alt="清晨山脊线与帐篷剪影：户外活动视频封面" width="400" height="225">
+            <span class="mky-cover-tag">户外</span>
+            <span class="mky-cover-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="mky-video-body">
+            <h4>露营第一课：如何在湿冷夜里睡个好觉</h4>
+            <p class="mky-video-excerpt">从地垫顺序到睡袋温标，一位户外老手把最容易踩坑的细节讲清楚，附打包清单。</p>
+            <div class="mky-video-tags"><span>户外</span><span>教程干货</span></div>
+            <div class="mky-video-foot">
+              <div class="mky-video-author"><span class="mky-avatar" style="background:linear-gradient(135deg,#a9cfd0,#3a5f52)">陆</span><span>陆行舟</span></div>
+              <div class="mky-video-ops">
+                <button type="button" class="mky-op-btn" data-mky-like><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-9.2-9C1.2 8.4 3 5 6.4 5c2 0 3.3 1.1 4.1 2.3l1.5 2 1.5-2C14.3 6.1 15.6 5 17.6 5 21 5 22.8 8.4 21.2 12 19 16.5 12 21 12 21z"/></svg><span>2.7k</span></button>
+                <button type="button" class="mky-op-btn" data-mky-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="mky-section mky-section-soft" id="mky-topic">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Special</span>
+          <h2>专题企划 · 成组观看的内容</h2>
+          <p>围绕季节、城市与具体议题组织系列短片，让单支影像之间产生关联。</p>
+        </div>
+        <a class="mky-more-link" href="#mky-news">企划进度 →</a>
+      </div>
+      <div class="mky-topic-grid">
+        <article class="mky-topic-card">
+          <div class="mky-topic-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='t1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f6c88a'/%3E%3Cstop offset='1' stop-color='%23c96a33'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23t1)'/%3E%3Ccircle cx='310' cy='70' r='42' fill='%23fff8f2' opacity='.6'/%3E%3Cpath d='M0 170 L80 120 L170 175 L260 125 L400 180 V250 H0 Z' fill='%238f4a20' opacity='.55'/%3E%3Crect x='40' y='70' width='44' height='72' rx='4' fill='%23fff8f2' opacity='.3'/%3E%3C/svg%3E" alt="晨光中的城市天际线：城市清晨专题封面" width="400" height="250">
+          </div>
+          <div class="mky-topic-content">
+            <span class="mky-topic-status mky-live">更新中 · 已上线 7 支</span>
+            <h4>专题｜城市清晨</h4>
+            <p>把镜头对准六点到八点的城市，记录那些在多数人醒来之前就已经开始的日常。</p>
+          </div>
+        </article>
+        <article class="mky-topic-card">
+          <div class="mky-topic-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='t2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%233f6b57'/%3E%3Cstop offset='1' stop-color='%23a7c9a4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23t2)'/%3E%3Cpath d='M30 200 q40 -90 80 0z' fill='%232a4a3b' opacity='.7'/%3E%3Cpath d='M120 200 q50 -120 100 0z' fill='%232a4a3b' opacity='.5'/%3E%3Cpath d='M250 200 q30 -70 60 0z' fill='%232a4a3b' opacity='.6'/%3E%3Ccircle cx='330' cy='60' r='30' fill='%23eaf6ea' opacity='.5'/%3E%3C/svg%3E" alt="山林与手作工具：手作与自然专题封面" width="400" height="250">
+          </div>
+          <div class="mky-topic-content">
+            <span class="mky-topic-status">已完结 · 6 支</span>
+            <h4>专题｜手作的时间</h4>
+            <p>六位手艺人，六种慢下来的方式，讨论手工与机器之间那条不必对立的分界。</p>
+          </div>
+        </article>
+        <article class="mky-topic-card">
+          <div class="mky-topic-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='t3' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e6d6c2'/%3E%3Cstop offset='1' stop-color='%239a6b40'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23t3)'/%3E%3Crect x='60' y='110' width='120' height='90' rx='10' fill='%23fff8f2' opacity='.4'/%3E%3Crect x='210' y='80' width='80' height='120' rx='10' fill='%23fff8f2' opacity='.3'/%3E%3Ccircle cx='330' cy='70' r='36' fill='%23fff8f2' opacity='.4'/%3E%3C/svg%3E" alt="厨房台面与餐具：家常味道专题封面" width="400" height="250">
+          </div>
+          <div class="mky-topic-content">
+            <span class="mky-topic-status mky-live">征集中 · 开放投稿</span>
+            <h4>专题｜家常味道</h4>
+            <p>面向社区征集的家庭菜谱影像，记录每个家庭独有的调味习惯与餐桌记忆。</p>
+          </div>
+        </article>
+        <article class="mky-topic-card">
+          <div class="mky-topic-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='t4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234f5d7a'/%3E%3Cstop offset='1' stop-color='%23b8c6d9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23t4)'/%3E%3Crect x='40' y='150' width='320' height='14' rx='4' fill='%23f4e6d8' opacity='.35'/%3E%3Crect x='70' y='90' width='52' height='60' rx='4' fill='%23f4e6d8' opacity='.3'/%3E%3Crect x='150' y='60' width='40' height='90' rx='4' fill='%23f4e6d8' opacity='.22'/%3E%3Ccircle cx='300' cy='80' r='30' fill='%23f4e6d8' opacity='.35'/%3E%3C/svg%3E" alt="夜间城市窗格与灯光：夜行者专题封面" width="400" height="250">
+          </div>
+          <div class="mky-topic-content">
+            <span class="mky-topic-status">即将上线 · 11 月底</span>
+            <h4>专题｜夜行者</h4>
+            <p>从便利店夜班到末班公交，记录城市在深夜运行时那些安静而具体的岗位。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="mky-section" id="mky-creators">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Creators</span>
+          <h2>创作者矩阵 · 持续更新的作者们</h2>
+          <p>点击作者卡片可以查看简介与代表作品，他们构成了每日看料one 的社区底色。</p>
+        </div>
+        <a class="mky-more-link" href="#mky-contact">成为创作者 →</a>
+      </div>
+      <div class="mky-creator-grid" id="mky-creator-grid">
+        <article class="mky-creator-card" data-mky-creator="顾南舟|城市探索影像创作者|专注城市空间与人的关系，擅长用长镜头记录街区变化。|42|3.8万" tabindex="0">
+          <div class="mky-avatar-lg" style="background:linear-gradient(135deg,#5b7f8f,#324a5e)">顾</div>
+          <h3>顾南舟</h3>
+          <div class="mky-creator-field">城市探索 · 纪录短片</div>
+          <p>专注城市空间与人的关系，擅长用长镜头记录街区变化。</p>
+          <div class="mky-creator-nums"><div><strong>42</strong>作品</div><div><strong>3.8万</strong>关注</div></div>
+        </article>
+        <article class="mky-creator-card" data-mky-creator="陶山手记|手作与器物创作者|陶艺工作室主理人，记录从泥到器物的完整过程与失败经验。|28|2.1万" tabindex="0">
+          <div class="mky-avatar-lg" style="background:linear-gradient(135deg,#c98a2e,#6b4a1f)">陶</div>
+          <h3>陶山手记</h3>
+          <div class="mky-creator-field">手作 · 器物记录</div>
+          <p>陶艺工作室主理人，记录从泥到器物的完整过程与失败经验。</p>
+          <div class="mky-creator-nums"><div><strong>28</strong>作品</div><div><strong>2.1万</strong>关注</div></div>
+        </article>
+        <article class="mky-creator-card" data-mky-creator="沈拾|美食与日常创作者|下班后做饭的人，主张简单食材也能做出稳妥的一餐。|56|5.2万" tabindex="0">
+          <div class="mky-avatar-lg" style="background:linear-gradient(135deg,#d4552b,#8f2f12)">沈</div>
+          <h3>沈拾</h3>
+          <div class="mky-creator-field">美食 · 日常记录</div>
+          <p>下班后做饭的人，主张简单食材也能做出稳妥的一餐。</p>
+          <div class="mky-creator-nums"><div><strong>56</strong>作品</div><div><strong>5.2万</strong>关注</div></div>
+        </article>
+        <article class="mky-creator-card" data-mky-creator="林砚|家居与收纳创作者|室内设计师，关注小空间里的秩序感与可持续的收纳系统。|31|2.6万" tabindex="0">
+          <div class="mky-avatar-lg" style="background:linear-gradient(135deg,#7fa07e,#3f6b57)">林</div>
+          <h3>林砚</h3>
+          <div class="mky-creator-field">家居 · 实用技巧</div>
+          <p>室内设计师，关注小空间里的秩序感与可持续的收纳系统。</p>
+          <div class="mky-creator-nums"><div><strong>31</strong>作品</div><div><strong>2.6万</strong>关注</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 故事随笔 -->
+  <section class="mky-section" id="mky-stories" style="padding-top:0">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Notes</span>
+          <h2>创作随笔 · 镜头之外的文字</h2>
+          <p>影像背后的一些判断、犹豫与片段，由创作者自己写下。</p>
+        </div>
+      </div>
+      <div class="mky-story-grid">
+        <article class="mky-story-card">
+          <h4>我为什么开始拍清晨</h4>
+          <p>最开始是因为失眠。五点半出门，路上只有清扫车和早点摊，那种安静让我觉得城市也有不被安排的时段。后来就变成了习惯，每周三拍一次，拍了两年。</p>
+          <div class="mky-story-who"><span class="mky-avatar" style="background:linear-gradient(135deg,#5b7f8f,#324a5e)">顾</span>顾南舟 · 城市探索</div>
+        </article>
+        <article class="mky-story-card">
+          <h4>不剪掉失败，是因为失败更好看</h4>
+          <p>第一次拉坯，泥在手里塌了四次。剪完片我发现，最打动人的恰恰是塌下去的那几秒。手作的魅力不只在成品，也在手上的犹疑与重新开始。</p>
+          <div class="mky-story-who"><span class="mky-avatar" style="background:linear-gradient(135deg,#c98a2e,#6b4a1f)">陶</span>陶山手记 · 手作</div>
+        </article>
+        <article class="mky-story-card">
+          <h4>加班夜归的那碗面</h4>
+          <p>有段时间每天十一点到家，冰箱里只剩两样东西。我就把那段日子拍了下来，没有配乐，只有水开的声音。后来收到留言说，看完也去煮了一碗。</p>
+          <div class="mky-story-who"><span class="mky-avatar" style="background:linear-gradient(135deg,#d4552b,#8f2f12)">沈</span>沈拾 · 美食日常</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影像墙 -->
+  <section class="mky-section mky-section-soft" id="mky-wall">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Gallery</span>
+          <h2>社区影像墙 · 来自用户的一帧</h2>
+          <p>每周从社区投稿中选出的静帧，尺寸随画面节奏变化，记录同好眼中的日常。</p>
+        </div>
+        <button type="button" class="mky-more-link" data-mky-open="submit" style="border:none;background:none">上传你的作品 →</button>
+      </div>
+      <div class="mky-wall">
+        <div class="mky-wall-item mky-wall-big">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 520'%3E%3Cdefs%3E%3ClinearGradient id='w1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f2b06a'/%3E%3Cstop offset='1' stop-color='%239c4a1f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='520' fill='url(%23w1)'/%3E%3Ccircle cx='440' cy='140' r='78' fill='%23fff4dd' opacity='.65'/%3E%3Cpath d='M0 360 Q160 300 320 350 T600 320 V520 H0 Z' fill='%236a3517' opacity='.7'/%3E%3Cpath d='M0 430 Q200 390 380 430 T600 410 V520 H0 Z' fill='%233d2010' opacity='.8'/%3E%3C/svg%3E" alt="黄昏天台上的暖色天空：社区影像墙大图" width="600" height="520">
+          <span>黄昏天台 · by 木子野</span>
+        </div>
+        <div class="mky-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 220'%3E%3Cdefs%3E%3ClinearGradient id='w2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23a9cfd0'/%3E%3Cstop offset='1' stop-color='%233a5f52'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='220' fill='url(%23w2)'/%3E%3Cpath d='M0 150 L70 100 L140 150 L220 90 L300 140 V220 H0 Z' fill='%23223b31' opacity='.8'/%3E%3C/svg%3E" alt="山谷晨雾中的远山轮廓：社区影像墙" width="300" height="220">
+          <span>山谷晨雾 · by 陆行舟</span>
+        </div>
+        <div class="mky-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 220'%3E%3Cdefs%3E%3ClinearGradient id='w3' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23f4ddc4'/%3E%3Cstop offset='1' stop-color='%23b97b4c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='220' fill='url(%23w3)'/%3E%3Cellipse cx='150' cy='150' rx='90' ry='34' fill='%23fff8f2' opacity='.55'/%3E%3Cellipse cx='150' cy='142' rx='62' ry='24' fill='%23c0562a' opacity='.6'/%3E%3C/svg%3E" alt="木桌上的一碗热汤与餐盘：社区影像墙" width="300" height="220">
+          <span>一人食 · by 沈拾</span>
+        </div>
+        <div class="mky-wall-item mky-wall-tall">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 460'%3E%3Cdefs%3E%3ClinearGradient id='w4' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23d9c3e0'/%3E%3Cstop offset='1' stop-color='%235a4a70'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='460' fill='url(%23w4)'/%3E%3Crect x='60' y='60' width='180' height='220' rx='12' fill='%23f4e6d8' opacity='.22'/%3E%3Ccircle cx='150' cy='330' r='42' fill='%23f4e6d8' opacity='.4'/%3E%3Cpath d='M90 460 q60 -70 120 0z' fill='%23f4e6d8' opacity='.3'/%3E%3C/svg%3E" alt="窗边的白色置物架与光影：社区影像墙竖图" width="300" height="460">
+          <span>窗边一隅 · by 林砚</span>
+        </div>
+        <div class="mky-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 220'%3E%3Cdefs%3E%3ClinearGradient id='w5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c98a2e'/%3E%3Cstop offset='1' stop-color='%236b4a1f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='220' fill='url(%23w5)'/%3E%3Ccircle cx='110' cy='110' r='46' fill='none' stroke='%23f4e6d8' stroke-width='9' opacity='.7'/%3E%3Ccircle cx='110' cy='110' r='20' fill='%23f4e6d8' opacity='.35'/%3E%3Cpath d='M220 50 l8 46 l46 8 l-46 8 l-8 46 l-8 -46 l-46 -8 l46 -8z' fill='%23fff2d6' opacity='.5'/%3E%3C/svg%3E" alt="陶轮上的泥坯与手：社区影像墙" width="300" height="220">
+          <span>拉坯第四天 · by 陶山手记</span>
+        </div>
+        <div class="mky-wall-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 220'%3E%3Cdefs%3E%3ClinearGradient id='w6' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2390b4c4'/%3E%3Cstop offset='1' stop-color='%232e4655'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='220' fill='url(%23w6)'/%3E%3Crect x='30' y='60' width='60' height='100' rx='4' fill='%23eaf2f4' opacity='.25'/%3E%3Crect x='110' y='40' width='44' height='120' rx='4' fill='%23eaf2f4' opacity='.18'/%3E%3Crect x='180' y='80' width='70' height='80' rx='4' fill='%23eaf2f4' opacity='.22'/%3E%3C/svg%3E" alt="雨后玻璃窗外的街景灯光：社区影像墙" width="300" height="220">
+          <span>雨夜窗格 · by 闻野</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="mky-section" id="mky-reviews">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Voices</span>
+          <h2>用户评价 · 来自社区的声音</h2>
+          <p>不同观看习惯的人，对同一个平台的不同期待。</p>
+        </div>
+      </div>
+      <div class="mky-review-grid">
+        <article class="mky-review">
+          <div class="mky-review-top"><span class="mky-avatar" style="background:linear-gradient(135deg,#e2572b,#b9401c)">阿</span><div><strong>阿蓝</strong><small>关注城市探索 · 2 年用户</small></div></div>
+          <div class="mky-review-stars">★★★★★</div>
+          <p>最喜欢它的专题组织方式。不是随便堆视频，而是围绕一个主题把不同作者的作品串起来，看完会想继续往下看。</p>
+        </article>
+        <article class="mky-review">
+          <div class="mky-review-top"><span class="mky-avatar" style="background:linear-gradient(135deg,#7fa07e,#3f6b57)">陈</span><div><strong>陈默</strong><small>家居内容爱好者</small></div></div>
+          <div class="mky-review-stars">★★★★★</div>
+          <p>收纳那几支视频我是反复看的，讲得具体，不飘。作者会说自己失败过什么，这点比很多教程可信。</p>
+        </article>
+        <article class="mky-review">
+          <div class="mky-review-top"><span class="mky-avatar" style="background:linear-gradient(135deg,#c98a2e,#6b4a1f)">小</span><div><strong>小满</strong><small>手作同好</small></div></div>
+          <div class="mky-review-stars">★★★★☆</div>
+          <p>整体质感很好，更新也稳定。就是有些专题结束得有点快，希望能出第二季，尤其是手作那条线。</p>
+        </article>
+        <article class="mky-review">
+          <div class="mky-review-top"><span class="mky-avatar" style="background:linear-gradient(135deg,#5b7f8f,#324a5e)">林</span><div><strong>林间</strong><small>户外爱好者</small></div></div>
+          <div class="mky-review-stars">★★★★★</div>
+          <p>露营那支片把装备顺序讲得很清楚，我照着清单买了东西，第一次夜里没被冻醒。希望多出这种能直接用的内容。</p>
+        </article>
+        <article class="mky-review">
+          <div class="mky-review-top"><span class="mky-avatar" style="background:linear-gradient(135deg,#b9a6c9,#554a6b)">顾</span><div><strong>顾小满</strong><small>投稿作者</small></div></div>
+          <div class="mky-review-stars">★★★★☆</div>
+          <p>投稿流程比较顺，编辑会回具体意见，不是模板回复。作为新人，能拿到一次真实的修改建议已经很值。</p>
+        </article>
+        <article class="mky-review">
+          <div class="mky-review-top"><span class="mky-avatar" style="background:linear-gradient(135deg,#e8a97a,#a55c2c)">周</span><div><strong>周末不加班</strong><small>美食日常观看者</small></div></div>
+          <div class="mky-review-stars">★★★★★</div>
+          <p>画面干净，节奏不吵。有些平台一打开就很大声，这里更像有人在旁边慢慢做饭，适合下班后放着看。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 -->
+  <section class="mky-section mky-section-soft" id="mky-news">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Updates</span>
+          <h2>企业动态 · 官方发布与更新日志</h2>
+          <p>品牌活动、内容更新与社区规则变动，都会在这里同步。</p>
+        </div>
+        <button type="button" class="mky-more-link" data-mky-open="share" style="border:none;background:none">分享更新 →</button>
+      </div>
+      <div class="mky-news-list">
+        <div class="mky-news-item">
+          <span class="mky-news-date">2026-11-18</span>
+          <div><h4>「城市清晨」专题新增三支原创短片</h4><p>新增内容覆盖早餐摊、首班地铁与清晨公园，专题页同步上线新的观看顺序建议。</p></div>
+          <span class="mky-news-type">内容更新</span>
+        </div>
+        <div class="mky-news-item">
+          <span class="mky-news-date">2026-11-12</span>
+          <div><h4>创作者激励计划第二期开放报名</h4><p>面向生活记录、手作与家居方向，入选者将获得拍摄支持与专题联合企划机会。</p></div>
+          <button type="button" class="mky-news-type" data-mky-open="submit">报名入口</button>
+        </div>
+        <div class="mky-news-item">
+          <span class="mky-news-date">2026-11-05</span>
+          <div><h4>每日看料one 与三家文旅品牌达成内容合作</h4><p>合作将围绕城市在地文化与短途旅行记录展开，首批联合企划预计十二月上线。</p></div>
+          <span class="mky-news-type">品牌合作</span>
+        </div>
+        <div class="mky-news-item">
+          <span class="mky-news-date">2026-10-28</span>
+          <div><h4>社区投稿规范更新：明确原创与授权说明</h4><p>为保护创作者权益，投稿页面新增授权确认步骤，历史作品不受影响。</p></div>
+          <span class="mky-news-type">规则说明</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mky-section" id="mky-faq">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Help</span>
+          <h2>常见问题 · 关于平台与投稿</h2>
+          <p>如果这里没有你的答案，可以通过页脚的联系方式找到我们。</p>
+        </div>
+      </div>
+      <div class="mky-faq">
+        <details>
+          <summary>每日看料one 是一个什么样的平台？</summary>
+          <p>每日看料one 是一家以生活影像为核心的视频品牌官方网站，提供原创短片、专题企划与社区投稿内容。我们不做批量聚合，而是由编辑与创作者共同完成每一支进入首页的影像。</p>
+        </details>
+        <details>
+          <summary>投稿有什么具体要求？</summary>
+          <p>作品需为原创或已获得完整授权，画质建议 1080p 以上，时长 1 至 20 分钟。我们更看重叙事是否完整、信息是否准确，而不是设备规格。投稿入口在页面底部与公告条均可找到。</p>
+        </details>
+        <details>
+          <summary>投稿之后多久会收到反馈？</summary>
+          <p>通常为 7 个工作日内。若通过初筛，编辑会给出具体的修改建议或排期说明；未通过的作品也会收到简要原因，方便后续创作调整。</p>
+        </details>
+        <details>
+          <summary>平台的内容会长期保留吗？</summary>
+          <p>会。每日看料one 会持续维护内容档案，按主题、地域与年份建立索引。我们希望通过持续运营，让优质影像不被时间快速淹没。</p>
+        </details>
+        <details>
+          <summary>企业可以合作定制内容吗？</summary>
+          <p>可以。合作形式包括品牌故事片、产品纪实、企业开放日影像与联合专题企划。我们会保留创作独立性，在企业事实层面进行必要校准。</p>
+        </details>
+        <details>
+          <summary>社区评论与互动有什么规则？</summary>
+          <p>我们鼓励具体、友善的讨论。涉及人身攻击、未经授权的素材搬运或商业广告的内容会被移除，严重者限制互动权限。规则细节可向官方邮箱索取。</p>
+        </details>
+        <details>
+          <summary>如何关注某位创作者？</summary>
+          <p>在创作者矩阵中点击作者卡片即可查看简介与代表作品，关注后可在后续更新中优先看到其新作。作者入驻信息以官方发布为准。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 / 合作 -->
+  <section class="mky-section mky-section-soft" id="mky-contact">
+    <div class="mky-container">
+      <div class="mky-section-head">
+        <div>
+          <span class="mky-eyebrow">Contact</span>
+          <h2>联系与合作 · 一起把内容做久</h2>
+          <p>无论你是创作者、品牌方还是普通观众，都欢迎与我们建立联系。</p>
+        </div>
+      </div>
+      <div class="mky-contact-wrap">
+        <div class="mky-contact-panel">
+          <h3>每日看料one · 品牌合作</h3>
+          <p>我们擅长用记录的方式呈现真实的企业面貌，从前期策划到成片交付提供完整支持。</p>
+          <ul class="mky-contact-lines">
+            <li><i>✉</i> 合作邮箱：brand@dailykanliao-one.cn</li>
+            <li><i>✎</i> 投稿邮箱：creator@dailykanliao-one.cn</li>
+            <li><i>⌂</i> 办公地址：杭州市拱墅区影像创意园 3 号楼</li>
+            <li><i>◷</i> 工作时间：周一至周五 10:00 – 19:00</li>
+          </ul>
+          <div class="mky-contact-actions">
+            <button type="button" class="mky-btn-light" data-mky-open="submit">提交合作意向</button>
+            <button type="button" class="mky-btn-outline-light" data-mky-open="share">分享给朋友</button>
+          </div>
+        </div>
+        <div class="mky-collab">
+          <h3>合作品牌与伙伴</h3>
+          <p>感谢这些长期同行的品牌与企业，让记录这件事有了更多可能。</p>
+          <div class="mky-brand-wall">
+            <span>山野装备</span>
+            <span>木作生活馆</span>
+            <span>青禾食品</span>
+            <span>本地文旅</span>
+            <span>一间书店</span>
+            <span>城市影像馆</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mky-footer">
+  <div class="mky-container">
+    <div class="mky-footer-grid">
+      <div class="mky-footer-brand">
+        <div class="mky-logo">
+          <span class="mky-logo-mark">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="mky-logo-words">
+            <strong>每日看料one</strong>
+            <span>DAILY KANLIAO ONE</span>
+          </span>
+        </div>
+        <p>每日看料one 官方网站 · 以生活影像为核心的视频品牌，持续运营原创内容、专题企划与创作者社区，致力于构建值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#mky-focus">焦点内容</a></li>
+          <li><a href="#mky-videos">热门影像</a></li>
+          <li><a href="#mky-topic">专题企划</a></li>
+          <li><a href="#mky-wall">社区影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#mky-about">品牌故事</a></li>
+          <li><a href="#mky-creators">创作者矩阵</a></li>
+          <li><a href="#mky-news">企业动态</a></li>
+          <li><a href="#mky-faq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与</h4>
+        <ul>
+          <li><a href="#mky-contact">品牌合作</a></li>
+          <li><a href="#mky-contact">投稿入口</a></li>
+          <li><a href="#mky-reviews">用户评价</a></li>
+          <li><a href="#mky-contact">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mky-footer-bottom">
+      <span>© 2026 每日看料one 官方网站 · 版权所有 · 持续运营中</span>
+      <div class="mky-footer-links">
+        <a href="#mky-faq">用户协议</a>
+        <a href="#mky-faq">隐私说明</a>
+        <a href="#mky-faq">投稿规范</a>
+        <span>浙ICP备2026-1188号</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="mky-top-btn" id="mky-top-btn" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 8h-5v8h-6v-8H4z"/></svg>
+</button>
+
+<!-- 弹窗：投稿 -->
+<div class="mky-modal" id="mky-modal-submit" role="dialog" aria-modal="true" aria-labelledby="mky-modal-submit-title">
+  <div class="mky-modal-box">
+    <button type="button" class="mky-modal-close" data-mky-close aria-label="关闭">×</button>
+    <h3 id="mky-modal-submit-title">投稿 / 合作意向</h3>
+    <p class="mky-modal-sub">填写基本信息，编辑会在 7 个工作日内回复。</p>
+    <form id="mky-submit-form">
+      <div class="mky-field"><label for="mky-f-name">称呼</label><input id="mky-f-name" type="text" placeholder="你的名字或昵称" required></div>
+      <div class="mky-field"><label for="mky-f-mail">联系邮箱</label><input id="mky-f-mail" type="email" placeholder="name@example.com" required></div>
+      <div class="mky-field"><label for="mky-f-type">类型</label>
+        <select id="mky-f-type">
+          <option>创作者投稿</option>
+          <option>品牌内容合作</option>
+          <option>专题联合企划</option>
+          <option>其他咨询</option>
+        </select>
+      </div>
+      <div class="mky-field"><label for="mky-f-msg">作品或需求简述</label><textarea id="mky-f-msg" placeholder="简单描述作品方向、时长或合作需求"></textarea></div>
+      <div class="mky-modal-actions">
+        <button type="button" class="mky-modal-cancel" data-mky-close>取消</button>
+        <button type="submit" class="mky-modal-submit">提交</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 弹窗：分享 -->
+<div class="mky-modal" id="mky-modal-share" role="dialog" aria-modal="true" aria-labelledby="mky-modal-share-title">
+  <div class="mky-modal-box">
+    <button type="button" class="mky-modal-close" data-mky-close aria-label="关闭">×</button>
+    <h3 id="mky-modal-share-title">分享每日看料one</h3>
+    <p class="mky-modal-sub">把值得一看的内容，转给同样喜欢记录的朋友。</p>
+    <div class="mky-share-row">
+      <button type="button" data-mky-share="微信">微信</button>
+      <button type="button" data-mky-share="微博">微博</button>
+      <button type="button" data-mky-share="QQ">QQ</button>
+      <button type="button" data-mky-share="复制链接">复制链接</button>
+    </div>
+  </div>
+</div>
+
+<!-- 弹窗：作者信息 -->
+<div class="mky-modal" id="mky-modal-creator" role="dialog" aria-modal="true" aria-labelledby="mky-modal-creator-title">
+  <div class="mky-modal-box">
+    <button type="button" class="mky-modal-close" data-mky-close aria-label="关闭">×</button>
+    <h3 id="mky-modal-creator-title">创作者档案</h3>
+    <p class="mky-modal-sub" id="mky-modal-creator-sub">每日看料one 合作创作者</p>
+    <div id="mky-modal-creator-body" style="font-size:14px;color:var(--mky-ink-soft);line-height:1.8"></div>
+    <div class="mky-modal-actions">
+      <button type="button" class="mky-modal-cancel" data-mky-close>关闭</button>
+      <button type="button" class="mky-modal-submit" id="mky-follow-creator">关注创作者</button>
+    </div>
+  </div>
+</div>
+
+<div class="mky-toast" id="mky-toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 工具 ---------- */
+  var toastEl = document.getElementById('mky-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('is-show'); }, 2200);
+  }
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('mky-burger');
+  var nav = document.getElementById('mky-nav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('is-open');
+      burger.setAttribute('aria-expanded','false');
+      document.querySelectorAll('.mky-nav a').forEach(function(a){a.classList.remove('is-active');});
+      e.target.classList.add('is-active');
+    }
+  });
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('mky-search-input');
+  var searchBtn = document.getElementById('mky-search-btn');
+  var searchTip = document.getElementById('mky-search-tip');
+  var searchPool = [
+    '城市清晨 专题','雨天老巷 城市探索','陶艺新手 拉坯',
+    '十分钟热汤面','小户型收纳','独立书店 访谈','露营睡眠 清单',
+    '顾南舟','陶山手记','沈拾','林砚','社区影像墙','投稿规范'
+  ];
+  function doSearch(){
+    var q = (searchInput.value || '').trim();
+    if(!q){
+      searchTip.innerHTML = '试试搜索：<b>城市清晨</b>、<b>收纳</b> 或 <b>顾南舟</b>';
+      searchTip.classList.add('is-open');
+      return;
+    }
+    var hits = searchPool.filter(function(item){ return item.indexOf(q) !== -1; });
+    if(hits.length){
+      searchTip.innerHTML = '找到 <b>' + hits.length + '</b> 个相关内容：' + hits.slice(0,3).join('、');
+      showToast('已为「' + q + '」匹配到相关内容');
+    }else{
+      searchTip.innerHTML = '暂未找到「<b>' + q.replace(/[<>&]/g,'') + '</b>」相关内容，可尝试更短的关键词。';
+      showToast('没有匹配结果，换个词试试');
+    }
+    searchTip.classList.add('is-open');
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doSearch(); } });
+  searchInput.addEventListener('input', function(){
+    if(!searchInput.value.trim()){ searchTip.classList.remove('is-open'); }
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.mky-search')){ searchTip.classList.remove('is-open'); }
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('[data-mky-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var span = btn.querySelector('span');
+      var raw = span.textContent.replace(/[^\d.k]/gi,'');
+      var liked = btn.classList.toggle('is-liked');
+      if(liked){
+        if(raw.indexOf('k') !== -1){
+          var num = parseFloat(raw) + 0.1;
+          span.textContent = num.toFixed(1) + 'k';
+        }else{
+          span.textContent = (parseInt(raw,10) || 0) + 1;
+        }
+        showToast('已点赞，感谢支持');
+      }else{
+        if(raw.indexOf('k') !== -1){
+          var num2 = parseFloat(raw) - 0.1;
+          span.textContent = Math.max(0,num2).toFixed(1) + 'k';
+        }else{
+          span.textContent = Math.max(0,(parseInt(raw,10) || 0) - 1);
+        }
+      }
+    });
+  });
+  document.querySelectorAll('[data-mky-save]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var saved = btn.classList.toggle('is-saved');
+      var svg = btn.querySelector('svg');
+      if(saved){
+        svg.setAttribute('fill','currentColor');
+        showToast('已收藏到我的片单');
+      }else{
+        svg.setAttribute('fill','none');
+        showToast('已取消收藏');
+      }
+    });
+  });
+
+  /* ---------- 标签筛选 ---------- */
+  var filterRow = document.getElementById('mky-filter-row');
+  var videoCards = Array.prototype.slice.call(document.querySelectorAll('#mky-video-grid .mky-video-card'));
+  filterRow.addEventListener('click', function(e){
+    var chip = e.target.closest('.mky-chip');
+    if(!chip) return;
+    filterRow.querySelectorAll('.mky-chip').forEach(function(c){c.classList.remove('is-active');});
+    chip.classList.add('is-active');
+    var cat = chip.getAttribute('data-mky-filter');
+    var shown = 0;
+    videoCards.forEach(function(card){
+      var match = (cat === 'all') || (card.getAttribute('data-mky-cat') === cat);
+      card.style.display = match ? '' : 'none';
+      if(match) shown++;
+    });
+    showToast('已筛选：' + chip.textContent + '（' + shown + ' 支）');
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  var counted = false;
+  function countUp(el){
+    var target = parseInt(el.getAttribute('data-mky-count'),10) || 0;
+    var start = 0, dur = 1200, t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var val = Math.floor(start + (target - start) * (1 - Math.pow(1 - p, 3)));
+      el.textContent = val.toLocaleString('zh-CN');
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString('zh-CN');
+    }
+    requestAnimationFrame(step);
+  }
+  var countEls = document.querySelectorAll('[data-mky-count]');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting && !counted){
+          counted = true;
+          countEls.forEach(countUp);
+          obs.disconnect();
+        }
+      });
+    }, {threshold:0.4});
+    if(countEls.length) obs.observe(countEls[0]);
+  }else{
+    countEls.forEach(countUp);
+  }
+
+  /* ---------- 弹窗通用 ---------- */
+  var openers = document.querySelectorAll('[data-mky-open]');
+  function openModal(id){
+    var modal = document.getElementById('mky-modal-' + id);
+    if(modal) modal.classList.add('is-open');
+  }
+  openers.forEach(function(btn){
+    btn.addEventListener('click', function(){ openModal(btn.getAttribute('data-mky-open')); });
+  });
+  document.querySelectorAll('.mky-modal').forEach(function(modal){
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) modal.classList.remove('is-open');
+    });
+    modal.querySelectorAll('[data-mky-close]').forEach(function(btn){
+      btn.addEventListener('click', function(){ modal.classList.remove('is-open'); });
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.mky-modal.is-open').forEach(function(m){m.classList.remove('is-open');});
+    }
+  });
+
+  /* ---------- 投稿表单 ---------- */
+  var submitForm = document.getElementById('mky-submit-form');
+  submitForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('mky-f-name').value.trim();
+    var mail = document.getElementById('mky-f-mail').value.trim();
+    if(!name || !mail){
+      showToast('请填写称呼与联系邮箱');
+      return;
+    }
+    document.getElementById('mky-modal-submit').classList.remove('is-open');
+    submitForm.reset();
+    showToast('提交成功，编辑会尽快与你联系');
+  });
+
+  /* ---------- 分享 ---------- */
+  document.querySelectorAll('[data-mky-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var type = btn.getAttribute('data-mky-share');
+      if(type === '复制链接'){
+        var link = 'https://dailykanliao-one.cn/';
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(link).then(function(){
+            showToast('链接已复制');
+          }).catch(function(){
+            showToast('复制失败，请手动复制');
+          });
+        }else{
+          showToast('当前环境不支持自动复制');
+        }
+      }else{
+        showToast('已生成微博/微信分享提示');
+      }
+    });
+  });
+
+  /* ---------- 创作者弹窗 ---------- */
+  var creatorCards = document.querySelectorAll('[data-mky-creator]');
+  var creatorTitle = document.getElementById('mky-modal-creator-title');
+  var creatorSub = document.getElementById('mky-modal-creator-sub');
+  var creatorBody = document.getElementById('mky-modal-creator-body');
+  creatorCards.forEach(function(card){
+    function openCreator(){
+      var parts = (card.getAttribute('data-mky-creator') || '').split('|');
+      creatorTitle.textContent = parts[0] || '创作者档案';
+      creatorSub.textContent = parts[1] || '每日看料one 合作创作者';
+      creatorBody.innerHTML = '<p style="margin-bottom:10px">' + (parts[2] || '') + '</p>' +
+        '<p>作品数：<b style="color:var(--mky-amber-dark)">' + (parts[3] || '-') + '</b> ｜ 关注：<b style="color:var(--mky-amber-dark)">' + (parts[4] || '-') + '</b></p>' +
+        '<p style="font-size:12.8px;margin-top:8px">代表方向：日常记录、经验分享、创作幕后。作品可在「热门影像」区块查看。</p>';
+      document.getElementById('mky-modal-creator').classList.add('is-open');
+    }
+    card.addEventListener('click', openCreator);
+    card.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openCreator(); } });
+  });
+  var followBtn = document.getElementById('mky-follow-creator');
+  followBtn.addEventListener('click', function(){
+    followBtn.textContent = followBtn.textContent === '关注创作者' ? '已关注' : '关注创作者';
+    showToast('操作已更新');
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('mky-top-btn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 480){ topBtn.classList.add('is-show'); }
+    else{ topBtn.classList.remove('is-show'); }
+  }, {passive:true});
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---------- 锚点偏移（预留吸顶高度） ---------- */
+  var stickyHead = document.querySelector('.mky-sticky-head');
+  function offsetForAnchors(){
+    var h = stickyHead ? stickyHead.offsetHeight : 0;
+    document.documentElement.style.scrollPaddingTop = (h + 12) + 'px';
+  }
+  offsetForAnchors();
+  window.addEventListener('resize', offsetForAnchors);
+
+  /* ---------- 卡片悬停 & 动效（CSS 为主，此处补充键盘可达性提示） ---------- */
+  document.querySelectorAll('.mky-video-card, .mky-topic-card').forEach(function(card){
+    card.addEventListener('focusin', function(){ card.style.outline = '2px solid var(--mky-amber)'; });
+    card.addEventListener('focusout', function(){ card.style.outline = ''; });
+  });
+
+})();
+</script>
+</body>
+                                                                         </html>
